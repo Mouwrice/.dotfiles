@@ -34,6 +34,8 @@
 
   home.packages = [
    pkgs.rustup
+   pkgs.pkg-config
+   pkgs.openssl
    pkgs.podman-compose
    envycontrol.packages.x86_64-linux.default
   ];
@@ -70,6 +72,6 @@
   #  /etc/profiles/per-user/mouwrice/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
   };
 }
