@@ -34,6 +34,7 @@
 
   home.packages = [
    pkgs.rustup
+   pkgs.podman-compose
    envycontrol.packages.x86_64-linux.default
   ];
 
