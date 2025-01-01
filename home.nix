@@ -1,4 +1,4 @@
-{ config, pkgs, nixgl, ... }:
+{ config, pkgs, envycontrol, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -34,6 +34,7 @@
 
   home.packages = [
    pkgs.rustup
+   envycontrol.packages.x86_64-linux.default
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
