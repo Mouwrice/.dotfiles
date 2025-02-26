@@ -5,6 +5,9 @@
 }:
 
 {
+
+   nixpkgs.config.allowUnfree = true;
+
   home.username = "mouwrice";
   home.homeDirectory = "/var/home/mouwrice";
 
@@ -18,6 +21,16 @@
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
   home.stateVersion = "24.11"; # Please read the comment before changing.
+
+  home.packages = [
+    pkgs.rustup
+    pkgs.pkg-config
+    pkgs.openssl
+    pkgs.podman-compose
+    pkgs.nixd
+    pkgs.bat
+    envycontrol.packages.x86_64-linux.default
+  ];
 
   programs.zsh = {
     enable = true;
@@ -33,15 +46,7 @@
 
   programs.pay-respects.enable = true;
 
-  home.packages = [
-    pkgs.rustup
-    pkgs.pkg-config
-    pkgs.openssl
-    pkgs.podman-compose
-    pkgs.nixd
-    pkgs.bat
-    envycontrol.packages.x86_64-linux.default
-  ];
+
 
   home.file = {
   };
@@ -49,4 +54,10 @@
   home.sessionVariables = {
     PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
   };
+
+  home.extraProfileCommands = ''
+      if [[ -d "$out/share/applications" ]] ; then
+        ${pkgs.desktop-file-utils}/bin/update-desktop-database $out/share/applications
+      fi
+    '';
 }
