@@ -6,12 +6,15 @@
 
 {
 
+  targets.genericLinux.enable = true;
+
    nixpkgs.config.allowUnfree = true;
 
   home.username = "mouwrice";
-  home.homeDirectory = "/var/home/mouwrice";
+  home.homeDirectory = "/home/mouwrice";
 
   programs.home-manager.enable = true;
+#  programs.home-manager.path = "/home/mouwrice/.dotfiles/";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -29,16 +32,18 @@
     pkgs.podman-compose
     pkgs.nixd
     pkgs.bat
-    envycontrol.packages.x86_64-linux.default
+#    envycontrol.packages.x86_64-linux.default
+#    pkgs.haskellPackages.aura
   ];
 
   programs.zsh = {
     enable = true;
     autocd = true;
     shellAliases = {
-      hm = "home-manager --flake /var/home/mouwrice/.dotfiles/";
+      hm = "home-manager --flake /home/mouwrice/.dotfiles/";
     };
   };
+
 
   programs.starship = {
     enable = true;
