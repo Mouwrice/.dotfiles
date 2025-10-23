@@ -37,7 +37,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.mouwrice = import ./home.nix;
+            home-manager.users.mouwrice = import ./shared;
 
             # Optionally, use home-manager.extraSpecialArgs to pass
             # arguments to home.nix
