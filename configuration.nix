@@ -51,12 +51,6 @@
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
 
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "workman";
-  };
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -130,5 +124,19 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.11"; # Did you read the comment?
-
+  
+  programs.dconf.profiles.user.databases = [
+    {
+      settings = {
+        "org/gnome/mutter" = {
+          experimental-features = [
+            "scale-monitor-framebuffer" # Enables fractional scaling (125% 150% 175%)
+            "variable-refresh-rate" # Enables Variable Refresh Rate (VRR) on compatible displays
+            "xwayland-native-scaling" # Scales Xwayland applications to look crisp on HiDPI screens
+          ];
+        };
+      };
+    }
+  ];
 }
+
