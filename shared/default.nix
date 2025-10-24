@@ -2,6 +2,8 @@
 
 {
 
+  home.stateVersion = "25.11";
+
   home.packages = with pkgs; [
     fastfetch
     nixd
