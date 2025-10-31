@@ -1,14 +1,11 @@
 {
   pkgs,
-  envycontrol,
   ...
 }:
 
 {
 
-  targets.genericLinux.enable = true;
-
-   nixpkgs.config.allowUnfree = true;
+  imports = [ ./shared ];
 
   home.username = "mouwrice";
   home.homeDirectory = "/home/mouwrice";
@@ -23,7 +20,7 @@
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
-  home.stateVersion = "24.11"; # Please read the comment before changing.
+  home.stateVersion = "25.11"; # Please read the comment before changing.
 
   home.packages = [
     pkgs.rustup
@@ -32,18 +29,15 @@
     pkgs.podman-compose
     pkgs.nixd
     pkgs.bat
-#    envycontrol.packages.x86_64-linux.default
-#    pkgs.haskellPackages.aura
   ];
 
-  programs.zsh = {
-    enable = true;
-    autocd = true;
-    shellAliases = {
-      hm = "home-manager --flake /home/mouwrice/.dotfiles/";
-    };
-  };
 
+  programs.ghostty = {
+    enable = true;
+    enableFishIntegration = true;
+    installBatSyntax = true;
+    installVimSyntax = true;  
+  };
 
   programs.starship = {
     enable = true;
@@ -51,18 +45,9 @@
 
   programs.pay-respects.enable = true;
 
-
-
-  home.file = {
-  };
-
-  home.sessionVariables = {
-    PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
-  };
-
-  home.extraProfileCommands = ''
-      if [[ -d "$out/share/applications" ]] ; then
-        ${pkgs.desktop-file-utils}/bin/update-desktop-database $out/share/applications
-      fi
-    '';
+  # home.extraProfileCommands = ''
+  #    if [[ -d "$out/share/applications" ]] ; then
+  #      ${pkgs.desktop-file-utils}/bin/update-desktop-database $out/share/applications
+  #    fi
+  #  '';
 }
