@@ -22,13 +22,14 @@
   # release notes.
   home.stateVersion = "25.11"; # Please read the comment before changing.
 
-  home.packages = [
-    pkgs.rustup
-    pkgs.pkg-config
-    pkgs.openssl
-    pkgs.podman-compose
-    pkgs.nixd
-    pkgs.bat
+  home.packages = with pkgs; [
+    fragments
+    rustup
+    pkg-config
+    openssl
+    podman-compose
+    nixd
+    bat
   ];
 
 
