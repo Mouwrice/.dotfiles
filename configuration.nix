@@ -93,10 +93,16 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    _1password-gui
+    firefox
     git
     vim
   ];
+
+  programs._1password.enable = true;
+  programs._1password-gui = {
+    enable = true;
+    polkitPolicyOwners = [ "mouwrice" ];
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

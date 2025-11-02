@@ -23,15 +23,15 @@
   home.stateVersion = "25.11"; # Please read the comment before changing.
 
   home.packages = with pkgs; [
-    fragments
-    rustup
-    pkg-config
-    openssl
-    podman-compose
-    nixd
     bat
+    fragments
+    jetbrains-toolbox
+    nixd
+    openssl
+    pkg-config
+    podman-compose
+    rustup
   ];
-
 
   programs.ghostty = {
     enable = true;
