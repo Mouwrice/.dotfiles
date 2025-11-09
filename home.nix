@@ -11,7 +11,7 @@
   home.homeDirectory = "/home/mouwrice";
 
   programs.home-manager.enable = true;
-#  programs.home-manager.path = "/home/mouwrice/.dotfiles/";
+  programs.home-manager.path = "/home/mouwrice/.dotfiles/";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -24,13 +24,17 @@
 
   home.packages = with pkgs; [
     bat
+    beeper
     fragments
-    jetbrains-toolbox
+    jetbrains.webstorm
     nixd
     openssl
     pkg-config
     podman-compose
     rustup
+    signal-desktop-bin
+    tidal-hifi
+    zed-editor
   ];
 
   programs.ghostty = {

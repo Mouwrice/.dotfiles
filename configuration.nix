@@ -78,10 +78,6 @@
     isNormalUser = true;
     description = "Maurice Van Wassenhove";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      beeper
-      signal-desktop-bin
-    ];
   };
 
   # Install firefox.
