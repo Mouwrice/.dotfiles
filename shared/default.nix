@@ -49,4 +49,20 @@
       enableFishIntegration = true;
     };
   };
+
+  home.file = {
+    ".config/ghostty/config".text = ''
+      font-family = JetBrainsMono Nerd Font Mono
+      font-size = 15
+      theme = Monokai Remastered
+      background-opacity = 0.7
+      background-blur = 30
+      link-url = true
+      window-padding-x = 12
+      window-padding-y = 12
+      window-save-state = always
+      macos-option-as-alt = true
+      auto-update = off
+    '';
+  };
 }
