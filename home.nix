@@ -25,10 +25,12 @@
   home.packages = with pkgs; [
     bat
     beeper
+    easyeffects
     fragments
     jetbrains.webstorm
     nixd
     openssl
+    pavucontrol
     pkg-config
     podman-compose
     rustup
