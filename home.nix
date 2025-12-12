@@ -50,6 +50,13 @@
     enable = true;
   };
 
+  services = {
+    syncthing = {
+      enable = true;
+      tray.enable = true;
+    };
+  };
+
   programs.pay-respects.enable = true;
 
   # home.extraProfileCommands = ''
