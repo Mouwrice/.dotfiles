@@ -6,6 +6,7 @@
 
   home.packages = with pkgs; [
     fastfetch
+    gh
     kitty
     nixd
     bat
