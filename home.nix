@@ -7,6 +7,7 @@
 
   imports = [ ./shared ];
 
+
   home.username = "mouwrice";
   home.homeDirectory = "/home/mouwrice";
 
@@ -23,10 +24,13 @@
   home.stateVersion = "25.11"; # Please read the comment before changing.
 
   home.packages = with pkgs; [
+    android-studio
+    antigravity-fhs
     bat
     beeper
     easyeffects
     fragments
+    jetbrains.idea-community-bin
     jetbrains.webstorm
     nixd
     openssl
