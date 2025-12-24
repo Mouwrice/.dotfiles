@@ -28,15 +28,19 @@
     antigravity-fhs
     bat
     beeper
+    carla
     easyeffects
     fragments
-    jetbrains.idea-community-bin
+    jetbrains.idea
+    jetbrains.rust-rover
     jetbrains.webstorm
     nixd
     openssl
     pavucontrol
     pkg-config
     podman-compose
+    qjackctl
+    qpwgraph
     rustup
     signal-desktop-bin
     tidal-hifi
