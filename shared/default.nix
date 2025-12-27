@@ -46,6 +46,16 @@
       nix-direnv.enable = true;
     };
 
+    kitty = {
+      enable = true;
+      shellIntegration.enableFishIntegration = true;
+      settings = {
+        shell = "fish";
+      };
+    };
+
+    pay-respects.enable = true;
+
     zoxide = {
       enable = true;
       enableFishIntegration = true;

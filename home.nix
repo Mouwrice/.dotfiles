@@ -7,7 +7,6 @@
 
   imports = [ ./shared ];
 
-
   home.username = "mouwrice";
   home.homeDirectory = "/home/mouwrice";
 
@@ -47,29 +46,10 @@
     zed-editor
   ];
 
-  programs.ghostty = {
-    enable = true;
-    enableFishIntegration = true;
-    installBatSyntax = true;
-    installVimSyntax = true;  
-  };
-
-  programs.starship = {
-    enable = true;
-  };
-
   services = {
     syncthing = {
       enable = true;
       tray.enable = true;
     };
   };
-
-  programs.pay-respects.enable = true;
-
-  # home.extraProfileCommands = ''
-  #    if [[ -d "$out/share/applications" ]] ; then
-  #      ${pkgs.desktop-file-utils}/bin/update-desktop-database $out/share/applications
-  #    fi
-  #  '';
 }
