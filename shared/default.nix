@@ -5,11 +5,12 @@
   home.stateVersion = "25.11";
 
   home.packages = with pkgs; [
+    bat
     fastfetch
     gh
     kitty
+    nix-search-cli
     nixd
-    bat
     sbt
     nvd
     presenterm

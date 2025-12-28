@@ -17,30 +17,27 @@
 
   # Flake outputs
   outputs =
-    { self, ... }@inputs:
+    { self, nixpkgs, home-manager, nixos-hardware, determinate, ... }:
     {
       # A minimal (but updatable!) NixOS configuration output by this flake
-      nixosConfigurations.nixos = inputs.nixpkgs.lib.nixosSystem {
+      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         # Change this if you're building for a system type other than x86 AMD Linux
         system = "x86_64-linux";
 
         modules = [
           # Load the Determinate module, which provides Determinate Nix
-          inputs.determinate.nixosModules.default
-          inputs.nixos-hardware.nixosModules.framework-amd-ai-300-series
+          determinate.nixosModules.default
+          nixos-hardware.nixosModules.framework-amd-ai-300-series
 
           # Load the hardware configuration from a separate file (a common convention for NixOS)
           ./hardware-configuration.nix
 
           ./configuration.nix
-          inputs.home-manager.nixosModules.home-manager
+          home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.mouwrice = import ./home.nix;
-
-            # Optionally, use home-manager.extraSpecialArgs to pass
-            # arguments to home.nix
           }
         ];
 

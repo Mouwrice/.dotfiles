@@ -33,6 +33,7 @@
     jetbrains.idea
     jetbrains.rust-rover
     jetbrains.webstorm
+    ledfx
     nixd
     openssl
     pavucontrol

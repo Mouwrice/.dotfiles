@@ -91,6 +91,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    alsa-tools
+    alsa-utils
     docker-buildx
     docker-compose
     firefox
