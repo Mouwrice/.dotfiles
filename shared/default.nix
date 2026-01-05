@@ -21,9 +21,9 @@
   };
 
   programs = {
-    git = {
+    direnv = {
       enable = true;
-      lfs.enable = true;
+      nix-direnv.enable = true;
     };
 
     fish = {
@@ -34,17 +34,9 @@
         '';
     };
 
-    starship = {
+    git = {
       enable = true;
-      settings = {
-        # "$schema" = 'https://starship.rs/config-schema.json'
-        command_timeout = 2000;
-      };
-    };
-
-    direnv = {
-      enable = true;
-      nix-direnv.enable = true;
+      lfs.enable = true;
     };
 
     kitty = {
@@ -55,7 +47,22 @@
       };
     };
 
+    nh = {
+      enable = true;
+      clean.enable = true;
+    };
+
     pay-respects.enable = true;
+
+    starship = {
+      enable = true;
+      settings = {
+        # "$schema" = 'https://starship.rs/config-schema.json'
+        command_timeout = 2000;
+      };
+    };
+
+
 
     zoxide = {
       enable = true;
