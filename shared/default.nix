@@ -8,7 +8,6 @@
     bat
     fastfetch
     gh
-    kitty
     nix-search-cli
     nixd
     sbt
@@ -42,9 +41,6 @@
     kitty = {
       enable = true;
       shellIntegration.enableFishIntegration = true;
-      settings = {
-        shell = "fish";
-      };
     };
 
     nh = {
@@ -61,8 +57,6 @@
         command_timeout = 2000;
       };
     };
-
-
 
     zoxide = {
       enable = true;
