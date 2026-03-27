@@ -25,6 +25,8 @@
       nix-direnv.enable = true;
     };
 
+    bash.enable = true;
+
     fish = {
       enable = true;
       generateCompletions = true;
